@@ -1,0 +1,22 @@
+<article class="question">
+		<div class="question-icon tag_{{tag}}">
+			<p>?</p>
+		</div>
+		<div class="question-content">
+			<p class="question-author">{{userID}}</p>
+			<a href="/{{_id}}">
+				<p class="question-text">
+					{{title}}
+				</p>
+			</a>
+
+			<div class="tags">
+				{{#each tag}}
+				<a href="#">
+					{{convertTag this}}
+				</a>
+				{{/each}}
+			</div>
+			
+		</div>
+	</article>

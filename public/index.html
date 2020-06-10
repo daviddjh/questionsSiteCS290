@@ -1,0 +1,199 @@
+<!--
+	TODO:
+			Modal for creating a new question. STYLED
+		Separate page for a question.
+		Clientside JS for modals.
+		"good question" button.
+		CSS person can edit classes for tag themes per question.
+			Switch to handlebars after staic index is finished.
+			"All" section on the navbar. DONE
+		Only display comments on the separate post page.
+			"Add Question" button replaces search. DONE
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Questions and Answers</title>
+		<link rel="stylesheet" href="/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet"> <!-- Title font -->
+		<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">     <!--  Main font -->
+  </head>
+
+  <body>
+
+    <header>
+      <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
+      <a href="#"><h1 class="site-title"> Questions.com</h1></a>
+
+      <nav class="navbar">
+        <ul class="navlist">
+			<li class="navitem navlink" id="allnav"><a href="/all">All</a></li>
+			<li class="navitem navlink" id="sportsnav"><a href="/sports">Sports</a></li>
+			<li class="navitem navlink"id="animalssnav"><a href="/animals">Animals</a></li>
+			<li class="navitem navlink"id="newsnav"><a href="/news">News</a></li>
+			<li class="navitem navlink"id="politicsnav"><a href="/politics">Politics</a></li>
+			<li class="navitem navlink"id="gamingnav"><a href="/gaming">Gaming</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="Question-Container">
+
+      <article class="question">
+        <div class="question-icon tag_sports">
+          <p>?</p>
+        </div>
+        <div class="question-content">
+          <p class="question-text">
+            Why is Tom Brady so bad at football?
+          </p>
+          <p class="tags">
+            <a href="#">Sports</a>
+          </p>
+        </div>
+      </article>
+
+	<article class="question">
+		<div class="question-icon tag_politics">
+			<p>?</p>
+		</div>
+		<div class="question-content">
+			<p class="question-text">
+				What is the best way to register to vote?
+			</p>
+			<p class="tags">
+				<a href="#">Politics</a>
+				<a href="#">News</a>
+			</p>
+			
+		</div>
+	</article>
+
+	<article class="question">
+		<div class="question-icon tag_news">
+			<p>?</p>
+		</div>
+		<div class="question-content">
+			<p class="question-text">
+				What is COVID-19?
+			</p>
+			<p class="tags">
+				<a href="#">News</a>
+			</p>
+			
+		</div>
+	</article>
+
+	<article class="question">
+		<div class="question-icon tag_gaming">
+			<p>?</p>
+		</div>
+		<div class="question-content">
+			<p class="question-text">
+				What is the best video game?
+			</p>
+			<p class="tags">
+				<a href="#">Gaming</a>
+			</p>
+			
+		</div>
+	</article>
+
+	<article class="question">
+		<div class="question-icon tag_animals">
+			<p>?</p>
+		</div>
+		<div class="question-content">
+			<p class="question-text">
+				Can a cat be legally elected?
+			</p>
+			<p class="tags">
+				<a href="#">Animals</a>
+				<a href="#">Politics</a>
+		</div>
+	</article>
+
+	<div class="comment">
+		<p class="comment-author">Anonymous</p>
+		<p>Cats can't hold office, but you can still dress one up in a suit for fun.</p>
+	</div>
+
+    </main>
+
+	<button type="button" id="create-question-button"><p>?</p></button>
+	
+	<button type="button" id="create-comment-button"><img src="/img/speech-bubble.png"></button>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="create-question-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Create a Question</h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="question-input-element">
+            <label for="question-text-input">Enter your question:</label>
+            <textarea id="question-text-input"></textarea>
+          </div>
+          <div class="tag_input_element">
+            <label for="tag_input">Tags:</label>
+				<input type="checkbox" id="tag1" name="sports" value="sports">
+					<label for="tag1">Sports</label>
+				<input type="checkbox" id="tag2" name="animals" value="animals">
+					<label for="tag2">Animals</label>
+				<input type="checkbox" id="tag3" name="news" value="news">
+					<label for="tag3">News</label>
+				<input type="checkbox" id="tag4" name="politics" value="politics">
+					<label for="tag4">Politics</label>
+				<input type="checkbox" id="tag5" name="gaming" value="gaming">
+					<label for="tag5">Gaming</label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="modal-return-button">Return</button>
+          <button type="button" class="modal-add-button">Create Question</button>
+        </div>
+
+    </div>
+    </div>
+
+		<div id="modal-backdrop" class="hidden"></div>
+		<div id="create-comment-modal" class="hidden">
+			<div class="modal-dialog">
+
+				<div class="modal-header">
+					<h3>Create a Comment</h3>
+					<button type="button" class="modal-close-button">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="question-input-element">
+						<label for="author-text-input">Author:</label>
+						<textarea id="author-text-input"></textarea>
+					</div>
+					<div class="question-input-element">
+
+						<label for="question-text-input">Comment:</label>
+						<textarea id="comment-text-input"></textarea>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="modal-return-button">Return</button>
+					<button type="button" class="modal-add-button">Create Comment</button>
+				</div>
+
+			</div>
+		</div>
+
+
+  </body>
+
+</html>

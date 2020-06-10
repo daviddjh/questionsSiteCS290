@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Questions and Answers</title>
+		<link rel="stylesheet" href="/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet"> <!-- Title font -->
+		<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">     <!--  Main font -->
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="/postTemplate.js" defer></script>
+    <script src="/commentTemplate.js" defer></script>
+  </head>
+
+  <body>
+
+    <header>
+      <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
+      <a href="#"><h1 class="site-title"> Questions.com</h1></a>
+
+      <nav class="navbar">
+        <ul class="navlist">
+			<li class="navitem navlink" id="allnav"><a href="/all">All</a></li>
+			<li class="navitem navlink" id="sportsnav"><a href="/sports">Sports</a></li>
+			<li class="navitem navlink"id="animalssnav"><a href="/animals">Animals</a></li>
+			<li class="navitem navlink"id="newsnav"><a href="/news">News</a></li>
+			<li class="navitem navlink"id="politicsnav"><a href="/politics">Politics</a></li>
+			<li class="navitem navlink"id="gamingnav"><a href="/gaming">Gaming</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    {{{body}}}
+
+  </body>
+  </html>
